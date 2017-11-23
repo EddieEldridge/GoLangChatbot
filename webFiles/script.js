@@ -27,7 +27,8 @@ const userText = bigInput.val();
                         bigInput.val(" ");
 
                         // Append the unordered list in our HTML with OUR response containted with a HTML list element
-                        $("ol").append("<li class='list-group-item list-group-item-success text-left'>" + "User : " + userText + "</li>");
+                      bigList.append("<li class='list-group-item list-group-item-success text-left'>" + "User : " + userText + "</li>");
+                       
             }
             
             // If the user enters another key that's not enter, let them try again
@@ -42,6 +43,10 @@ const userText = bigInput.val();
                 "userInput" : userText
             }
             $.get("/chat", queryParams)
+            .done(function(resp) {
+                const nextListItem = "<li class='list-group-item list-group-item-warning text-right'>" + "Eliza : " + resp + "</li>";
+                bigInput.append(nextListItem)                
+            }
             
             
            

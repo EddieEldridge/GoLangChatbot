@@ -4,14 +4,15 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	
+
+	"./elizaResponse"
 )
 
 func chatHandler(w http.ResponseWriter, r *http.Request) {
 
 	userInput := r.URL.Query().Get("userInput")
-	response := askEliza.elizaResponse(userInput)
-	fmt.Fprintf(w, userInput)
+	response := askEliza.ElizaResponseFunc(userInput)
+	fmt.Fprintf(w, response)
 
 	w.Header().Set("Content-Type", "text/html")
 
@@ -33,10 +34,4 @@ func main() {
 
 	// Serve webpage to port 8080 on localhost
 	log.Fatal(http.ListenAndServe(":8080", nil))
-}
-
-// Create a structure to hold our variables for ElizasResponse
-type messageStruct struct {
-	ElizaResponse string
-	UserInput     string
 }
