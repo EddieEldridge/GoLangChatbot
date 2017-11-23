@@ -1,13 +1,16 @@
 
+
+
+$(function(){
+    
+ $("#userInput").keypress(function(key) {
+    
 // Assign the input taken by the user to jquery variable called htmlUserInput
 const htmlUserInput = $("#userInput");
 const htmlUserList = $("#conversation-list")
 
-
-$(document).ready(function(){
-    
- $("#userInput").keypress(function(key) {
-    
+// Assign the value from htmlUserInput to userText
+const userText = htmlUserInput.val();
 
             if(key.keyCode == 13) 
             {
@@ -15,8 +18,7 @@ $(document).ready(function(){
                         // Stop the page from refreshing
                         event.preventDefault();
             
-                        // Assign the value from htmlUserInput to userText
-                        const userText = htmlUserInput.val();
+                    
                         
                         // Clear the text box
                         htmlUserInput.val("");
