@@ -1,17 +1,19 @@
 
 
-
+// Shortened version of the document.ready jquery function
 $(function(){
-    
+
+// Function that executes dependant on certain keypresses
  $("#userInput").keypress(function(key) {
     
-// Assign the input taken by the user to jquery variable called htmlUserInput
-const bigList = $("#list-group")
+// Assign the input taken by the user to jquery variable called bigInput
+const bigList = $("#list-group");
 const bigInput = $("#userInput");
 
-// Assign the value from htmlUserInput to userText
+// Assign the value from htmlUserInput to a jQuery variable called userText
 const userText = bigInput.val();
 
+            // If the user presses the enter key(keycode(13)), execute the following code
             if(key.keyCode == 13) 
             {
                 
@@ -22,10 +24,16 @@ const userText = bigInput.val();
                         console.log(userText);
                       
                         // Clear the text box
-                        bigInput.val("");
+                        bigInput.val(" ");
 
                         // Append the unordered list in our HTML with OUR response containted with a HTML list element
-                        $("ul").append("<li class='list-group-item list-group-item-success text-left'>" + "User : " + userText + "</li>");
+                        $("ol").append("<li class='list-group-item list-group-item-success text-left'>" + "User : " + userText + "</li>");
+            }
+            
+            // If the user enters another key that's not enter, let them try again
+            else
+            {
+                return;
             }
             
            
