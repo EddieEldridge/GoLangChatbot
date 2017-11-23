@@ -35,6 +35,14 @@ const userText = bigInput.val();
             {
                 return;
             }
+
+
+            // Passing 
+            const queryParams = {
+                "userInput" : userText
+            }
+            $.get("/chat", queryParams)
+            
             
            
        
