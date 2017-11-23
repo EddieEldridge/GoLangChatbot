@@ -42,11 +42,12 @@ const userText = bigInput.val();
             const queryParams = {
                 "userInput" : userText
             }
+
             $.get("/chat", queryParams)
             .done(function(resp) {
                 const nextListItem = "<li class='list-group-item list-group-item-warning text-right'>" + "Eliza : " + resp + "</li>";
-                bigInput.append(nextListItem)                
-            }
+                bigList.append(nextListItem)                
+            })
             
             
            
