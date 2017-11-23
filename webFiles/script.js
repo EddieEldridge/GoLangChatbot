@@ -3,31 +3,31 @@
 const htmlUserInput = $("#userInput");
 const htmlUserList = $("#conversation-list")
 
- $("#userInput").keypress(function(e) {
+
+$(document).ready(function(){
     
-            console.log("test");
+ $("#userInput").keypress(function(key) {
+    
 
-            // If keypress of the enter key(key 13) isn't done, let them enter another key
-            if(e.keyCode == 13) {
+            if(key.keyCode == 13) 
+            {
+                
+                        // Stop the page from refreshing
+                        event.preventDefault();
             
-            alert('You pressed enter!');  
-
-            // Stop the page from refreshing
-            event.preventDefault();
-
-            // Assign the value from htmlUserInput to userText
-            const userText = htmlUserInput.val();
+                        // Assign the value from htmlUserInput to userText
+                        const userText = htmlUserInput.val();
+                        
+                        // Clear the text box
+                        htmlUserInput.val("");
             
-            // Clear the text box
-            htmlUserInput.val(" ");
-
-            htmlUserList.append("<li class='list-group-item list-group-item-primary text-right'>" + "User : " + userText + "</li>");
-        }
+                        htmlUserList.append("<li class='list-group-item list-group-item-primary text-right'>" + "User : " + userText + "</li>");
+            }
+            
+           
+       
     });
    
-    
-    
-
-
+});
 
 
