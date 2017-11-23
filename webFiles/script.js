@@ -6,11 +6,11 @@ $(function(){
  $("#userInput").keypress(function(key) {
     
 // Assign the input taken by the user to jquery variable called htmlUserInput
-const htmlUserInput = $("#userInput");
-const htmlUserList = $("#conversation-list")
+const bigList = $("#list-group")
+const bigInput = $("#userInput");
 
 // Assign the value from htmlUserInput to userText
-const userText = htmlUserInput.val();
+const userText = bigInput.val();
 
             if(key.keyCode == 13) 
             {
@@ -18,12 +18,14 @@ const userText = htmlUserInput.val();
                         // Stop the page from refreshing
                         event.preventDefault();
             
-                    
-                        
+                        // Test
+                        console.log(userText);
+                      
                         // Clear the text box
-                        htmlUserInput.val("");
-            
-                        htmlUserList.append("<li class='list-group-item list-group-item-primary text-right'>" + "User : " + userText + "</li>");
+                        bigInput.val("");
+
+                        // Append the unordered list in our HTML with OUR response containted with a HTML list element
+                        $("ul").append("<li class='list-group-item list-group-item-success text-left'>" + "User : " + userText + "</li>");
             }
             
            
