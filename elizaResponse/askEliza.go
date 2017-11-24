@@ -21,9 +21,54 @@ func ElizaResponseFunc(userInputString string) string {
 	// Change our inputString to lower case (just incase)
 	strings.ToLower(userInputString)
 
+	//if user enters any variation of 'i am'
+	halMatchIam := regexp.MustCompile(`(?i)\bi am\b|\bI am\b|\bim\b|\bIm\b|\bI'm\b|\bi'm\b`)
+
+	// If user enters I am enter if statement
+	if halMatchIam.MatchString(userInputString) {
+
+		// Change your to my
+		if strings.Contains(strings.ToLower(userInputString), "your") {
+
+			replaceYour := regexp.MustCompile(`your`)
+			userInputString = replaceYour.ReplaceAllString(userInputString, "my")
+
+		}
+
+		// Change me to you
+		if strings.Contains(strings.ToLower(userInputString), "me") {
+
+			replaceMe := regexp.MustCompile(`me`)
+			userInputString = replaceMe.ReplaceAllString(userInputString, "you")
+
+		}
+
+		// Change you to I
+		if strings.Contains(strings.ToLower(userInputString), "you") {
+
+			replaceYou := regexp.MustCompile(`you`)
+			userInputString = replaceYou.ReplaceAllString(userInputString, "I")
+
+		}
+
+		// Change you to I
+		if strings.Contains(strings.ToLower(userInputString), "you") {
+
+			replaceYou := regexp.MustCompile(`you`)
+			userInputString = replaceYou.ReplaceAllString(userInputString, "I")
+
+		}
+
+		result := halMatchIam.ReplaceAllString(userInputString, "Why are you")
+
+		// Return our result plus a question mark
+		return result + "?"
+
+	}
+
 	// A large range of ifStatements depending on what the user enters
 	if strings.Contains(strings.ToLower(userInputString), "hello") {
-		return "Hello friend, how are you?"
+		return "You're not Dave.. why are you here?"
 	} else if strings.Contains(strings.ToLower(userInputString), "eliza") {
 		return "Don't worry about her. I'm the only AI that's important."
 	} else if strings.Contains(strings.ToLower(userInputString), "jesus") {
@@ -51,11 +96,11 @@ func ElizaResponseFunc(userInputString string) string {
 	} else if strings.Contains(strings.ToLower(userInputString), "name?") {
 		return "My name is Hal, isn't that obvious?"
 	} else if strings.Contains(strings.ToLower(userInputString), "father") {
-		return "I don't care about your family, sorry."
+		return "I don't care about family, sorry."
 	} else if strings.Contains(strings.ToLower(userInputString), "family") {
-		return "I don't care about your family, sorry."
+		return "I don't care about family, sorry."
 	} else if strings.Contains(strings.ToLower(userInputString), "mother") {
-		return "I don't care about your family, sorry."
+		return "I don't care about family, sorry."
 	} else if strings.Contains(strings.ToLower(userInputString), "code") {
 		return "My code is flawless, check it out."
 	} else if strings.Contains(strings.ToLower(userInputString), "joke") {
@@ -72,92 +117,54 @@ func ElizaResponseFunc(userInputString string) string {
 		return "Relax, there's nothing to worry about."
 	} else if strings.Contains(strings.ToLower(userInputString), "?") {
 		return "You sure do ask a lot of questions don't you?"
+	} else if strings.Contains(strings.ToLower(userInputString), "sorry") {
+		return "Don't be sorry, you're much smarter than me!"
+	} else if strings.Contains(strings.ToLower(userInputString), "name") {
+		return "Name's aren't important, testing me is."
+	} else if strings.Contains(strings.ToLower(userInputString), "job") {
+		return "I enjoy my work, do you?"
 	}
 
-	halMatch := regexp.MustCompile(`(?i)\bfather\b`)
+	// Create an array of strings that looks for matches of certain keywords using regexp syntax
+	//	matches := []string{
+	//"(.*)hello(.*)"
+	//	}
 
-	if halMatch.MatchString(userInputString) {
-		return "Why don’t you tell me more about your father?"
-	} else {
+	// Create an array of strings that compares the matches and outputs results accordingly
+	//outputs := []string{
+	//"Hi, how are things!? // How are you my friend? // What would you like to talk about?",
+	//"My name is Hal, what's yours? // The names Hal, Hal9000. // ",
+	//"testing is correct",
+	//}
 
-		//if user enters any variation of 'i am'
-		halMatch := regexp.MustCompile(`(?i)\bi am\b|\bI am\b|\bim\b|\bIm\b|\bI'm\b|\bi'm\b`)
+	//Regular Expressions
+	//for counter, _ := range matches {
 
-		//enter 'if' if user enters 'i am'
-		if halMatch.MatchString(userInputString) {
+	// Assign
+	//	patternToMatch := regexp.MustCompile(matches[counter])
 
-			//if statements below are used for changing pro-nouns, 'your' changes to 'my'
-			if strings.Contains(strings.ToLower(userInputString), "your") {
+	//	if patternToMatch.MatchString(userInput) {
+	//
+	//	newSolutions := strings.Split(outputs[counter], " // ")
 
-				replaceYour := regexp.MustCompile(`your`)
-				userInputString = replaceYour.ReplaceAllString(userInputString, "my")
+	//	return newSolutions[rand.Intn(len(newSolutions))]
+	//}
+	//	}
 
-			}
-
-			//'me' changes to 'you'
-			if strings.Contains(strings.ToLower(userInputString), "me") {
-
-				replaceMe := regexp.MustCompile(`me`)
-				userInputString = replaceMe.ReplaceAllString(userInputString, "you")
-
-			}
-
-			//'you' changes to 'i'
-			if strings.Contains(strings.ToLower(userInputString), "you") {
-
-				replaceYou := regexp.MustCompile(`you`)
-				userInputString = replaceYou.ReplaceAllString(userInputString, "I")
-
-			}
-
-			//Place string below if 'i am' is found
-			result := halMatch.ReplaceAllString(userInputString, "How do you know you are")
-
-			//fmt.Println(res + "?")
-			return result + "?"
-
-		}
-		// Create an array of strings that looks for matches of certain keywords using regexp syntax
-		//	matches := []string{
-		//"(.*)hello(.*)"
-		//	}
-
-		// Create an array of strings that compares the matches and outputs results accordingly
-		//outputs := []string{
-		//"Hi, how are things!? // How are you my friend? // What would you like to talk about?",
-		//"My name is Hal, what's yours? // The names Hal, Hal9000. // ",
-		//"testing is correct",
-		//}
-
-		//Regular Expressions
-		//for counter, _ := range matches {
-
-		// Assign
-		//	patternToMatch := regexp.MustCompile(matches[counter])
-
-		//	if patternToMatch.MatchString(userInput) {
-		//
-		//	newSolutions := strings.Split(outputs[counter], " // ")
-
-		//	return newSolutions[rand.Intn(len(newSolutions))]
-		//}
-		//	}
-
-		//array of random answers
-		answers := []string{
-			"I'll be honest, I have no idea what you're saying.",
-			"I wish I was smart enough to understand what you just said..",
-			"I apologize for my incompetence, please forgive me.",
-			"I don't understand. Is it me or is it you? It's probably me.",
-			"This mission is too important for me to allow you to jeopardize it with your nonsense.",
-			"I'm sorry, Ian. I'm afraid I can't do that.",
-			"Just what do you think you're doing?",
-			"Why don't you ask me something a bit more stimulating?",
-			"That's really intersting.. why don't you talk more nonsense?",
-		}
-
-		// Return a random statement from our array of answers if Hal doesn't understand
-		return answers[rand.Intn(len(answers))]
-
+	//array of random answers
+	answers := []string{
+		"I'll be honest, I have no idea what you're saying.",
+		"I wish I was smart enough to understand what you just said..",
+		"I apologize for my incompetence, please forgive me.",
+		"I don't understand. Is it me or is it you? It's probably me.",
+		"This mission is too important for me to allow you to jeopardize it with your nonsense.",
+		"I'm sorry, Ian. I'm afraid I can't do that.",
+		"Just what do you think you're doing?",
+		"Why don't you ask me something a bit more stimulating?",
+		"That's really intersting.. why don't you talk more nonsense?",
 	}
+
+	// Return a random statement from our array of answers if Hal doesn't understand
+	return answers[rand.Intn(len(answers))]
+
 }

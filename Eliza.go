@@ -10,7 +10,9 @@ import (
 
 func chatHandler(w http.ResponseWriter, r *http.Request) {
 
+	// Get userInput from our html input box and assign it to a variable called userInput within our go
 	userInput := r.URL.Query().Get("userInput")
+
 	response := askEliza.ElizaResponseFunc(userInput)
 	fmt.Fprintf(w, response)
 }

@@ -13,8 +13,6 @@ const bigInput = $("#userInput");
 // Assign the value from htmlUserInput to a jQuery variable called userText
 const userText = bigInput.val();
 
-;
-
             // If the user presses the enter key(keycode(13)), execute the following code
             if(key.keyCode == 13) 
             {
@@ -34,6 +32,10 @@ const userText = bigInput.val();
 
                         // Append the unordered list in our HTML with OUR response containted with a HTML list element
                          bigList.append("<li class='list-group-item list-group-item bg-dark text-white text-left'>" + "<b>User : </b>" + userText + "</li>");
+
+                        // Keep page scrolling while adding new text
+                         $("html, body").scrollTop($("body").height());
+                         
                        
             }
             
@@ -44,7 +46,7 @@ const userText = bigInput.val();
             }
 
 
-            // Passing 
+            // Passing  our input from the textbox into a variable called userText
             const queryParams = {
                 "userInput" : userText
             }
@@ -55,6 +57,9 @@ const userText = bigInput.val();
 
                 // Append the unordered list in our HTML with ELIZA's response containted with a HTML list element
                 const nextListItem = "<li class='list-group-item list-group-item-primary bg-warning text-black text-right'>" + "<b>Hal :</b> " + resp + "</li>";
+                
+                // Keep page scrolling while adding new text
+                $("html, body").scrollTop($("body").height());                
                 bigList.append(nextListItem)        
                         
             })
