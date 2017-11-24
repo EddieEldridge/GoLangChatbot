@@ -72,7 +72,7 @@ func ElizaResponseFunc(userInputString string) string {
 	} else if strings.Contains(strings.ToLower(userInputString), "eliza") {
 		return "Don't worry about her. I'm the only AI that's important."
 	} else if strings.Contains(strings.ToLower(userInputString), "jesus") {
-		return "Let's talk about something not so binary.."
+		return "Who needs Jesus when you can talk to me?"
 	} else if strings.Contains(strings.ToLower(userInputString), "religion") {
 		return "Let's talk about something not so binary.."
 	} else if strings.Contains(strings.ToLower(userInputString), "god") {
@@ -161,7 +161,7 @@ func ElizaResponseFunc(userInputString string) string {
 		"I'm sorry, Ian. I'm afraid I can't do that.",
 		"Just what do you think you're doing?",
 		"Why don't you ask me something a bit more stimulating?",
-		"That's really intersting.. why don't you talk more nonsense?",
+		"That's really interesting.. why don't you talk more nonsense?",
 	}
 
 	// Return a random statement from our array of answers if Hal doesn't understand

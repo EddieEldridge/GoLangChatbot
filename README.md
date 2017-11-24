@@ -42,24 +42,24 @@ localhost:8080
 I developed the program over the course of a couple of weeks. Me and other classmates worked on the project together on numerous times, helping each other accomplish any difficult tasks or obstacles we might indiviually be stumped on. It was an interesting
 experience to code an actual program using the Go programming language and learning how regular expressions work. I also enjoyed designing the layout of the website and was greatly helped by Bootstrap (https://getbootstrap.com/)
 
-#### Design
+### Design
 I decided to use the AI from 2001: A Space Odyssey as a personality as both Eliza and the film were produced in the 1960's. Eliza was one of the very first chatbots created and one of the first AI's to pass the Turing test so I thought it appropriate to use a fictional AI from a movie created only 2 years after Eliza's creation.
 
 ### Added Features
 Try asking Hal about the following topics (not case-sensitive)
-⋅⋅* Eliza
-⋅⋅* Jesus
-⋅⋅* Religion
-⋅⋅* God
-⋅⋅* College
-⋅⋅* Hal 
-⋅⋅* Language
-⋅⋅* Sports
-⋅⋅* Music
-⋅⋅* Family
-⋅⋅* Coding
-⋅⋅* Jokes
-⋅⋅* Jobs
+* Eliza
+* Jesus
+* Religion
+* God
+* College
+* Hal 
+* Language
+* Sports
+* Music
+* Family
+* Coding
+* Jokes
+* Jobs
 
 ### References
 https://data-representation.github.io/
