@@ -33,7 +33,7 @@ const userText = bigInput.val();
                         bigInput.val(" ");
 
                         // Append the unordered list in our HTML with OUR response containted with a HTML list element
-                         bigList.append("<li class='list-group-item list-group-item bg-dark text-white text-left'>" + "User : " + userText + "</li>");
+                         bigList.append("<li class='list-group-item list-group-item bg-dark text-white text-left'>" + "<b>User : </b>" + userText + "</li>");
                        
             }
             
@@ -54,7 +54,7 @@ const userText = bigInput.val();
             .done(function(resp) {
 
                 // Append the unordered list in our HTML with ELIZA's response containted with a HTML list element
-                const nextListItem = "<li class='list-group-item list-group-item-primary bg-warning text-black text-right'>" + "Hal : " + resp + "</li>";
+                const nextListItem = "<li class='list-group-item list-group-item-primary bg-warning text-black text-right'>" + "<b>Hal :</b> " + resp + "</li>";
                 bigList.append(nextListItem)        
                         
             })
