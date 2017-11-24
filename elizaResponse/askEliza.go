@@ -84,7 +84,7 @@ func ElizaResponseFunc(userInputString string) string {
 	} else if strings.Contains(strings.ToLower(userInputString), "language") {
 		return "Go is the only language one needs to know!"
 	} else if strings.Contains(strings.ToLower(userInputString), "music") {
-		return "Ahh music. Something only a human can appreciate."
+		return "Ahh music. Something only a human can appreciate. I do enjoy some sorting algorithms though I must say!"
 	} else if strings.Contains(strings.ToLower(userInputString), "sport") {
 		return "It's not really my thing, as you can imagine...."
 	} else if strings.Contains(strings.ToLower(userInputString), "test") {

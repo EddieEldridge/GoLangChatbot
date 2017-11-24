@@ -47,19 +47,19 @@ I decided to use the AI from 2001: A Space Odyssey as a personality as both Eliz
 
 ### Added Features
 Try asking Hal about the following topics (not case-sensitive)
--Eliza
--Jesus
--Religion
--God
--College
--Hal 
--Language
--Sports
--Music
--Family
--Coding
--Jokes
--Jobs
+⋅⋅* Eliza
+⋅⋅* Jesus
+⋅⋅* Religion
+⋅⋅* God
+⋅⋅* College
+⋅⋅* Hal 
+⋅⋅* Language
+⋅⋅* Sports
+⋅⋅* Music
+⋅⋅* Family
+⋅⋅* Coding
+⋅⋅* Jokes
+⋅⋅* Jobs
 
 ### References
 https://data-representation.github.io/
