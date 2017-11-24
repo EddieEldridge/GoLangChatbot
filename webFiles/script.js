@@ -3,7 +3,7 @@
 // Shortened version of the document.ready jquery function
 $(function(){
 
-// Function that executes dependant on certain keypresses
+// Function that takes in the key pressed from our input box as a parameter as well as the input entered
  $("#userInput").keypress(function(key) {
     
 // Assign the input taken by the user to jquery variable called bigInput
@@ -13,10 +13,16 @@ const bigInput = $("#userInput");
 // Assign the value from htmlUserInput to a jQuery variable called userText
 const userText = bigInput.val();
 
+;
+
             // If the user presses the enter key(keycode(13)), execute the following code
             if(key.keyCode == 13) 
             {
-                
+                         // Some audio for when the user enters a message
+                         var audio = new Audio('voice.mp3');
+                         audio.volume = 0.5;                         
+                         audio.play()
+
                         // Stop the page from refreshing
                         event.preventDefault();
             
@@ -27,7 +33,7 @@ const userText = bigInput.val();
                         bigInput.val(" ");
 
                         // Append the unordered list in our HTML with OUR response containted with a HTML list element
-                      bigList.append("<li class='list-group-item list-group-item-success text-left'>" + "User : " + userText + "</li>");
+                         bigList.append("<li class='list-group-item list-group-item bg-dark text-white text-left'>" + "User : " + userText + "</li>");
                        
             }
             
@@ -43,10 +49,14 @@ const userText = bigInput.val();
                 "userInput" : userText
             }
 
+            // Our /chat functon
             $.get("/chat", queryParams)
             .done(function(resp) {
-                const nextListItem = "<li class='list-group-item list-group-item-warning text-right'>" + "Eliza : " + resp + "</li>";
-                bigList.append(nextListItem)                
+
+                // Append the unordered list in our HTML with ELIZA's response containted with a HTML list element
+                const nextListItem = "<li class='list-group-item list-group-item-primary bg-warning text-black text-right'>" + "Hal : " + resp + "</li>";
+                bigList.append(nextListItem)        
+                        
             })
             
             

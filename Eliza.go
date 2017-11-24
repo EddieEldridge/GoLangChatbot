@@ -13,9 +13,6 @@ func chatHandler(w http.ResponseWriter, r *http.Request) {
 	userInput := r.URL.Query().Get("userInput")
 	response := askEliza.ElizaResponseFunc(userInput)
 	fmt.Fprintf(w, response)
-
-	w.Header().Set("Content-Type", "text/html")
-
 }
 
 func main() {

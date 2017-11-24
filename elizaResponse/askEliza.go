@@ -17,13 +17,18 @@ func ElizaResponseFunc(inputString string) string {
 	// Assign our userInput to a string variable for comparison
 	userInput := inputString
 
-	// Create an array of strings that
+	// Create an array of strings that looks for matches of certain keywords using regexp syntax
 	matches := []string{
 		"(.*)hello(.*)",
+		"(.*)good(.*)",
+		"(.*)test(.*)",
 	}
 
+	// Create an array of strings that compares the matches and outputs results accordingly
 	outputs := []string{
-		"Hi, how are things!?=Well, how are you my friend?",
+		"Hi, how are things!? // How are you my friend? // What would you like to talk about?",
+		"My name is Eliza, what's yours?",
+		"testing is correct",
 	}
 
 	//Regular Expressions
@@ -34,19 +39,17 @@ func ElizaResponseFunc(inputString string) string {
 
 		if patternToMatch.MatchString(userInput) {
 
-			newSolutions := strings.Split(outputs[counter], "=")
-			print("Line Matched")
+			newSolutions := strings.Split(outputs[counter], " // ")
+
 			return newSolutions[rand.Intn(len(newSolutions))]
 		}
 	}
 
 	//array of random answers
 	answers := []string{
-		"Alright. Interesting....",
-		"How does that make you feel?",
-		"Why do you say that?",
-		"Huh??",
-		"I'm not even going to pretend that I know what you're trying to say...",
+		"I'll be honest, I have no idea what you're saying.",
+		"I wish I was smart enough to understand what you just said..",
+		"English, user. Do you speak it?",
 	}
 
 	//return answer if input does not match expressions
