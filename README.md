@@ -18,7 +18,8 @@ To clone the repository to your local machine, using your prefered command promp
 git clone https://github.com/EddieEldridge/GoLangChatbot
 ```
 There is two ways to run this program
-1. **Build and Run** Navigate to the Eliza-Chatbot folder and enter the following to compile the code 
+1. **Build and Run**
+ Navigate to the Eliza-Chatbot folder and enter the following to compile the code 
 ```
 go build eliza.go
 ```
