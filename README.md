@@ -1,3 +1,10 @@
+![golangchatbot](https://user-images.githubusercontent.com/22448079/38645770-2b4248b8-3ddd-11e8-9b5a-7baca873756e.png)
+
+
+<p align="center">
+  <b>A web hosted chatbot built using the Go programming language</b><br>
+</p>
+
 # Data Representation and Querying Project Eliza-ChatBot
 My name is Edward Eldridge I am a third year software developement student in G.M.I.T.
 
