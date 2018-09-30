@@ -5,7 +5,6 @@
   <b>A web hosted chatbot built using the Go programming language</b><br>
 </p>
 
-# Data Representation and Querying Project Eliza-ChatBot
 The following program is an Eliza Chatbot with a personality akin to the Hal9000 AI from the Stanley Kubrick film '2001: A Space Odyssey' (http://www.imdb.com/title/tt0062622/)
 
 #### What is an Eliza Chatbot
